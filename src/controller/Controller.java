@@ -68,7 +68,7 @@ public class Controller extends HttpServlet {
 		
 		Cliente cliente  = new Cliente(nombre, apellido, rut);
 		servicio.actualizar(cliente);
-		
+		System.out.println("Despues de actualizar");
         response.sendRedirect("index.jsp");
 	}
 	/**
@@ -77,11 +77,11 @@ public class Controller extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.inicio(request, response);
 	}
-	
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+	@Override
+	public String toString() {
+		return "Controller [servicio=" + servicio + "]";
 	}
+
+	
 }
